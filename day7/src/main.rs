@@ -148,7 +148,7 @@ impl Hand {
                 }
             }
         } else {
-            // XY...
+            // XY***
             if self.0[1] == self.0[2] {
                 //XYY**
                 if self.0[2] == self.0[3] {
