@@ -173,7 +173,7 @@ fn next_node(grid: &Grid, node: &Node) -> Option<Node> {
     if let Some(next_point) = next_point(node) {
         match node.out_dir {
             Direction::North => {
-                return match grid[next_point.0][next_point.1] {
+                match grid[next_point.0][next_point.1] {
                     '|' => Some(Node {
                         point: next_point,
                         out_dir: Direction::North,
@@ -187,10 +187,10 @@ fn next_node(grid: &Grid, node: &Node) -> Option<Node> {
                         out_dir: Direction::West,
                     }),
                     _ => None,
-                };
+                }
             }
             Direction::South => {
-                return match grid[next_point.0][next_point.1] {
+                match grid[next_point.0][next_point.1] {
                     '|' => Some(Node {
                         point: next_point,
                         out_dir: Direction::South,
@@ -204,10 +204,10 @@ fn next_node(grid: &Grid, node: &Node) -> Option<Node> {
                         out_dir: Direction::West,
                     }),
                     _ => None,
-                };
+                }
             }
             Direction::East => {
-                return match grid[next_point.0][next_point.1] {
+                match grid[next_point.0][next_point.1] {
                     '-' => Some(Node {
                         point: next_point,
                         out_dir: Direction::East,
@@ -221,10 +221,10 @@ fn next_node(grid: &Grid, node: &Node) -> Option<Node> {
                         out_dir: Direction::South,
                     }),
                     _ => None,
-                };
+                }
             }
             Direction::West => {
-                return match grid[next_point.0][next_point.1] {
+                match grid[next_point.0][next_point.1] {
                     '-' => Some(Node {
                         point: next_point,
                         out_dir: Direction::West,
@@ -238,9 +238,11 @@ fn next_node(grid: &Grid, node: &Node) -> Option<Node> {
                         out_dir: Direction::South,
                     }),
                     _ => None,
-                };
+                }
             }
         }
     }
-    None
+    else {
+        None
+    }
 }
