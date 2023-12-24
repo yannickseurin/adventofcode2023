@@ -1,0 +1,11 @@
+[package]
+name = "day12"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+fn-cache = "1.1.1"
+log = { version = "0.4.20", features = ["max_level_debug", "release_max_level_error"] }
+simple_logger = "4.3.0"
